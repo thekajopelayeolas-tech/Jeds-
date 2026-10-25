@@ -1,7 +1,10 @@
 import { defineConfig } from 'vite';
 
-// The site is served from https://<user>.github.io/minecraft/ on GitHub Pages,
-// so production asset URLs need that prefix. Dev keeps the root path.
+// GitHub Pages serves project sites from https://<user>.github.io/<repo>/, so
+// production asset URLs need the repo name as a prefix. GITHUB_REPOSITORY is set
+// by GitHub Actions ("owner/repo"). Local builds and dev keep the root path.
+const repo = process.env.GITHUB_REPOSITORY?.split('/')[1];
+
 export default defineConfig(({ command }) => ({
-  base: command === 'build' ? '/minecraft/' : '/',
+  base: command === 'build' && repo ? `/${repo}/` : '/',
 }));
