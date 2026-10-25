@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minecraft Web</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="crosshair">+</div>
+      <div id="mining" style="display: none"><div></div></div>
+      <div id="health"></div>
+      <div id="held"></div>
+      <div id="hotbar"></div>
+      <div id="info"></div>
+      <div id="inventory" class="hidden">
+        <h2>Inventory</h2>
+        <div class="inv-row">
+          <div id="inv-craft" class="craft-grid"></div>
+          <div class="arrow">&rarr;</div>
+          <div id="inv-output"></div>
+        </div>
+        <div id="inv-main" class="inv-grid"></div>
+        <div id="inv-hotbar" class="inv-grid row"></div>
+        <p id="craft-label"></p>
+        <p id="inv-contents"></p>
+        <p class="hint">E close · click to pick up/place · craft in the 3x3 grid</p>
+      </div>
+      <div id="death" class="hidden">
+        <h1>You died!</h1>
+        <p>Click to respawn</p>
+      </div>
+      <div id="menu">
+        <h1>Minecraft Web</h1>
+        <p>Press Enter or click to play</p>
+        <p class="controls">
+          WASD move · Space jump · Ctrl sprint · Shift sneak · Mouse look<br />
+          Left click break · Right click place · 1-9 / wheel select block<br />
+          F fly toggle · Esc pause
+        </p>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
